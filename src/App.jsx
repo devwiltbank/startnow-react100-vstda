@@ -12,3 +12,25 @@ class App extends Component {
 }
 
 export default App;
+
+
+class List extends App{
+  render() {
+    return(
+      <div className='list'>
+        
+      </div>
+    )
+  }
+}
+
+class Search extends App{
+  render() {
+    return(
+      <div className='search'>
+        <input/>
+        <button> Add ToDo </button>
+      </div>
+    )
+  }
+}

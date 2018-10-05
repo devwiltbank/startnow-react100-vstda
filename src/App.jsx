@@ -1,6 +1,34 @@
 import React, { Component } from 'react';
+// import AddToDo from './AddToDo';
+// import ViewToDo from './ViewToDo';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addPriority: '',
+      message: '',
+      id: '',
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+     [event.target.name] : event.target.value
+    });
+  }
+  
+  
+  addToDo() {
+
+    
+  this.setState({
+      priority: priority,
+      message: message,
+      id: id,
+    });
+  }
 
   render() {
     return (
@@ -10,89 +38,96 @@ class App extends Component {
             <h4>Track all of the things</h4>
           </div> 
         <div className='row'>
-          <div className='col-4'>
-            <div className='card'>
+            {/* Insert my AddToDo and ViewToDo REACT components below*/}
+            <div className='col-4'>
+           <div className='card'>
               <h6 className='card-header text-secondary'>Add New Todo</h6>
               <div className='card-body'>
-                <div className="form-group">
-                  <label for="comment">I want to..</label>
-                  <textarea className="form-control" rows="5" id="comment"></textarea>
+                <div className='form-group'>
+                  <label>I want to..</label>
+                  <textarea className='form-control message '
+                            rows='5' 
+                            id='idtodoinput'
+                            name='message'
+                            // value={ this.state.message }
+                            onChange={ this.handleChange }
+                            >
+                  </textarea>
                 </div>
-                <div Name='card-text'>
-                 <label for="comment">How much of a priority is this?</label>
-                      <div className="input-group mb-3">
-                        <select className="custom-select" id="inputGroupSelect01">
-                          <option selected>Choose...</option>
-                          <option value="1">High Priority</option>
-                          <option value="2">Medium Priority</option>
-                          <option value="3">Low Priority</option>
+                <div className='card-text'>
+                 <label>How much of a priority is this?</label>
+                      <div className='input-group mb-3'>
+                        <select className='custom-select' 
+                                id='addselectid'
+                                name='priority'
+                                onChange={ this.handleChange }
+                                >
+                          <option>Choose...</option>
+                          <option value='1'>High Priority</option>
+                          <option value='2'>Medium Priority</option>
+                          <option value='3'>Low Priority</option>
                         </select>
                       </div>         
                 </div>
               </div>
               <div className='card-footer'>
                 <button
-                  className='button btn btn-success text-white'
-                  id='calculateChange'
-                  name='submit'
-                  onClick=''
+                  className='button btn btn-success text-white submit'
+                  onClick={ this.addToDo }
                 >
                 Add
                 </button>
               </div>
             </div>
           </div>
+
+
+          {/* <AddToDo.jsx />
+          <ViewToDo.jsx /> */}
           <div className='col-8'>
             <div className='card'>
               <h6 className='card-header text-secondary'>View ToDos</h6>
-                
-                  
-             
-              {/* <div className='form-group'>
-                      <label for='comment'>Description</label>
-                      <textarea className='form-control' rows='5' id='comment'></textarea>
-                  </div>
-                  <div Name='card-text'>
-                  <label for='comment'>Priority</label>
+                <div className='m-4'> 
+                    <div className='form-group'>
+                      <label>Description</label>
+                        <textarea className='form-control' rows='5' id='editToDo'></textarea>
+                    </div>
+                  <div className='card-text'>
+                    <label>Priority</label>
                         <div className='input-group mb-3 col-6'>
-                          <select className='custom-select' id='inputGroupSelect01'>
-                            <option selected>set current priority state here</option>
+                          <select className='custom-select'
+                                  id='editselectid'
+                                  name='editPriority'
+                                  onChange={ this.handleChange }
+                                  >
+                            <option>set current priority state here</option>
                             <option value='1'>High Priority</option>
                             <option value='2'>Medium Priority</option>
                             <option value='3'>Low Priority</option>
                           </select>
                         </div>
+                      </div>  
                         <div className='col-2 btn pull-right'>
                       <button
-                        className='button btn btn-success text-white'
-                        id='calculateChange'
+                        className='button btn btn-success text-white submit'
                         name='submit'
-                        onClick=''
+                        onClick={ this.addToDo }
                       >
                       Save
                       </button>
                   </div>
-                </div> */}
-           
-
-          </div>
-
-
-
+                </div> 
+            </div>
                 <div className='well well-sm custom-control custom-checkbox'>
                   <input type='checkbox' 
-                         className='custom-control-input' 
-                         id='customCheck1'>
+                        className='custom-control-input' 
+                        name='checkbox'
+                        id='customCheck1'>
                   </input>
-                  <label className='custom-control-label ml-3'
-                         for='customCheck1'>
-                         Insert Todo here
-                  </label>
+                  <label className='custom-control-label ml-3'>Insert Todo here</label>
                 </div>
+            </div>
 
-
-
-          </div>
         </div>
       </div>
     );
@@ -100,25 +135,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-// class List extends App{
-//   render() {
-//     return(
-//       <div className='list'>
-        
-//       </div>
-//     )
-//   }
-// }
-
-// class Search extends App{
-//   render() {
-//     return(
-//       <div className='search'>
-//         <input/>
-//         <button> Add ToDo </button>
-//       </div>
-//     )
-//   }
-// }

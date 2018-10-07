@@ -1,7 +1,21 @@
-AddToDo() {
+import React, { Component } from 'react';
+
+export class AddToDo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+    //this.something = this.something.bind(this);
+  }
+
+  addToDo(){
+
+  }
+
   render () {
     return (
-        <div>
+        <div className='container'>
          <div className='col-4'>
            <div className='card'>
               <h6 className='card-header text-secondary'>Add New Todo</h6>
@@ -50,4 +64,3 @@ AddToDo() {
   }
 }
 
-export default AddToDo;

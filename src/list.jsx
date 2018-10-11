@@ -45,6 +45,7 @@ export class List extends Component {
         <div className={ alertT } role='alert'>
               <label htmlFor='edit'>Description</label>
                 <textarea className='form-control update-todo-text' 
+                          id='update-todo-text'
                           rows='5' 
                           value={ this.state.text}
                           name='text'
@@ -55,6 +56,7 @@ export class List extends Component {
               <label htmlFor='priority'>Priority</label>
                 <div className='input-group mb-3 col-6'>
                   <select className='custom-select update-todo-priority'
+                          id='update-todo-priority'
                           name='priority'
                           value={ this.state.priority }
                           onChange={ this.handleChange }
@@ -68,7 +70,8 @@ export class List extends Component {
               <div className='col-2 btn pull-right'>
                 <button
                   className='button btn btn-success text-white update-todo'
-                  name='save'
+                  id='update-todo'
+                  name='submit'
                   onClick={ this.handleSaveTask }
                   type='button'
                 >
@@ -85,14 +88,16 @@ export class List extends Component {
           <label className='align-bottom'>
             { this.state.text }
           </label>
-        <span className='oi oi-trash pull-right delete-todo' 
-              name='delete'
+        <span className='delete-todo oi oi-trash pull-right' 
+              id='delete-todo'
+              name='delete-todo'
               role='button' 
               onClick={ this.handleDeleteTask }>
         </span>
-        <span className='oi oi-pencil pull-right edit-todo' 
+        <span className='edit-todo oi oi-pencil pull-right' 
+              id='edit-todo'
               role='edit' 
-              name='edit'
+              name='edit-todo'
               onClick={ this.handleEditTask }
               >&nbsp;&nbsp;&nbsp;&nbsp;
         </span>

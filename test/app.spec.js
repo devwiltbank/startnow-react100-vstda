@@ -52,7 +52,7 @@ describe('Very Simple To Do App', function main() {
       .click('button.create-todo')
       .wait(500)
       .evaluate(() => {
-        const { innerText, className } = document.querySelectorAll('li')[0];
+        const { innerText, className } = document.querySelectorAll('.alert')[0];
         return { innerText, className };
       })
       .then(({ innerText, className }) => {
@@ -90,7 +90,7 @@ describe('Very Simple To Do App', function main() {
       .wait('.update-todo-text')
       .type('.update-todo-text', ' UPDATED')
       .click('.update-todo')
-      .evaluate(() => document.querySelectorAll('li')[0].innerText)
+      .evaluate(() => document.querySelectorAll('.alert')[0].innerText)
       .end()
       .then(finalValue => expect(finalValue).to.contain('UPDATED'))
   );
@@ -108,7 +108,7 @@ describe('Very Simple To Do App', function main() {
       .wait('.delete-todo')
       .click('.delete-todo')
       .wait(250)
-      .evaluate(() => document.querySelectorAll('li').length)
+      .evaluate(() => document.querySelectorAll('.alert').length)
       .end()
       .then(length => expect(length).to.equal(1))
   );

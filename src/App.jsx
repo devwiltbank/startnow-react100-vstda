@@ -73,9 +73,9 @@ class App extends Component {
               <div className='card-body'>
                   <div className='form-group text-secondary'>
                   <label htmlFor='create'>I want to..</label>
-                  <textarea className='form-control create-todo'
+                  <textarea className='form-control create-todo-text'
                             rows='5' 
-                            id='create'
+                            id='create-todo-text'
                             name='text'
                             value={ this.state.text }
                             onChange={ this.handleChange }
@@ -85,8 +85,8 @@ class App extends Component {
                   <div>
                   <label className='text-secondary'>How much of a priority is this?</label>
                       <div className='input-group mb-3'>
-                          <select className='form-control custom-select text-secondary create-todo' 
-                                  id='priority'
+                          <select className='form-control custom-select text-secondary create-todo-priority' 
+                                  id='create-todo-priority'
                                   name='priority'
                                   value={ this.state.priority }
                                   onChange={ this.handleChange }
@@ -101,8 +101,9 @@ class App extends Component {
                   <div className='card-footer'>
                       <button
                       className='button btn btn-success text-white create-todo'
+                      id='create-todo'
                       type='button'
-                      name='submit'
+                      name='create-todo'
                       onClick={ this.handleAddEvent }
                       >
                       Add

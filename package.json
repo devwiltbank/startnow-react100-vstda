@@ -4,7 +4,7 @@
   "description": "REACT100 Assignment - VSTDA",
   "main": "server/index.js",
   "scripts": {
-    "build": "...",
+    "build": "npm run less && webpack",
     "start": "npm run build && node server",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
@@ -26,7 +26,6 @@
     "now": "^11.4.6",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "serve-favicon": "^2.5.0",
     "webpack": "^3.6.0"
   },
   "devDependencies": {
